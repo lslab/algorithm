@@ -27,7 +27,7 @@ public class QuickSort<T extends Comparable<T>> extends AbstractSort<T>
 		print(a);
 	}
 
-	// ´Ë·½·¨Ğ§ÂÊ²»¸ß¡£µ«×îºÃÀí½â¡£
+	// æ­¤æ–¹æ³•æ•ˆç‡ä¸é«˜ã€‚ä½†æœ€å¥½ç†è§£ã€‚
 	private int partition1(int[] a, int p, int q) {
 		int pivot = a[p];
 		while (p < q) {
@@ -42,7 +42,7 @@ public class QuickSort<T extends Comparable<T>> extends AbstractSort<T>
 		return q;
 	}
 
-	//ÕâÖÖ×ö·¨Í¦ºÃÍæµÄ£¬Ö»ÊÇĞ§ÂÊ²»ºÃËµ£¬·µ»ØµÄÖĞ¼äÖµ£¬²»ÔÙ²ÎÓëÅÅĞò¡£
+	//è¿™ç§åšæ³•æŒºå¥½ç©çš„ï¼Œåªæ˜¯æ•ˆç‡ä¸å¥½è¯´ï¼Œè¿”å›çš„ä¸­é—´å€¼ï¼Œä¸å†å‚ä¸æ’åºã€‚
 	public static int partition(int[] a, int p, int q) {
 //		print(p);
 //		print(q);
@@ -60,8 +60,8 @@ public class QuickSort<T extends Comparable<T>> extends AbstractSort<T>
 		return index;
 	}
 
-	// ´Ë·½·¨Ğ§ÂÊ²»¸ß¡£µ«×îºÃÀí½â¡£
-	// ¶ÔÓÚÏàÍ¬µÄÊı´¦ÀíÓĞÎÊÌâ£¿
+	// æ­¤æ–¹æ³•æ•ˆç‡ä¸é«˜ã€‚ä½†æœ€å¥½ç†è§£ã€‚
+	// å¯¹äºç›¸åŒçš„æ•°å¤„ç†æœ‰é—®é¢˜ï¼Ÿ
 	public static int partition2(int[] a, int p, int q) {
 		int pivot = a[(p + q) / 2];
 		print(pivot);
@@ -87,8 +87,8 @@ public class QuickSort<T extends Comparable<T>> extends AbstractSort<T>
 		return i;
 	}
 
-	// Ğ§ÂÊ¸ß¡£È¡ÖĞÊı£¬ÉèÖÃ±ß½ç¡£javaµÄ¿ìËÙÅÅĞòÒ²ÊÇ²»´íµÄ²Î¿¼Àı×Ó¡£
-	// µ«ÊÇ¶ÔÓÚÖ»ÓĞ2¸ö³¤¶ÈÊ±£¬ÖĞÎ»Êı¾Í»áÓĞÎÊÌâ¡£ÔİÊ±²»¿¼ÂÇ´Ë·½·¨¡£
+	// æ•ˆç‡é«˜ã€‚å–ä¸­æ•°ï¼Œè®¾ç½®è¾¹ç•Œã€‚javaçš„å¿«é€Ÿæ’åºä¹Ÿæ˜¯ä¸é”™çš„å‚è€ƒä¾‹å­ã€‚
+	// ä½†æ˜¯å¯¹äºåªæœ‰2ä¸ªé•¿åº¦æ—¶ï¼Œä¸­ä½æ•°å°±ä¼šæœ‰é—®é¢˜ã€‚æš‚æ—¶ä¸è€ƒè™‘æ­¤æ–¹æ³•ã€‚
 	private int partition_more(int[] a, int p, int q) {
 
 		int pivot = med3(a, p, q);
