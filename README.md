@@ -1,4 +1,0 @@
-algorithm
-=========
-
-practice algorithm
