@@ -1,4 +1,4 @@
-package lslab.algorithm.permutation;
+package lslab.algorithm.question.permutation;
 
 public class Permute{
     static void permute(java.util.List<Integer> arr, int k){

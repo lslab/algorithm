@@ -1,4 +1,4 @@
-package lslab.algorithm.permutation;
+package lslab.algorithm.question.permutation;
 
 public class EightEights {
 
