@@ -14,6 +14,7 @@ package lslab.algorithm.question.math;
  */
 public class PalindromicPrime {
 
+	
 	/**
 	 * @param args
 	 */
@@ -21,6 +22,7 @@ public class PalindromicPrime {
 		// TODO Auto-generated method stub
 		int icount = 0;
 		int ibegin = 99999;
+		
 		while (ibegin > 10000 && icount < 6) {
 			if (isPrimeMoreEfficency(ibegin)) {
 				if (isPalindrome(String.valueOf(ibegin))) {
