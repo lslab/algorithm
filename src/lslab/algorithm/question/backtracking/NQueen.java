@@ -12,7 +12,7 @@ public class NQueen {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int maxN = 4;
+		int maxN = 8;
 		int[] solves = new int[maxN];
 		nqueensimple(maxN, 0, solves);
 		System.out.println(solvecounts);
@@ -48,6 +48,7 @@ public class NQueen {
 			if (isSafe(maxN, curN, tmp, solves)) {
 				solves[curN] = tmp;
 				nqueen(maxN, curN + 1, solves);
+				solves[curN]=0;
 			}
 
 		}
