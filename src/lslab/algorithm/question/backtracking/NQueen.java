@@ -16,6 +16,7 @@ public class NQueen {
 		int[] solves = new int[maxN];
 		nqueensimple(maxN, 0, solves);
 		System.out.println(solvecounts);
+		factorial(5000);
 
 	}
 
@@ -94,6 +95,18 @@ public class NQueen {
 				return false;
 		}
 		return true;
+	}
+	
+	public static void factorial(int n){
+		java.math.BigInteger  bi=new java.math.BigInteger("1");
+		
+		
+		for(int i=1;i<=n;++i){
+			bi=bi.multiply(new java.math.BigInteger(i+""));
+			System.out.println(i);
+		}
+		System.out.println(bi);
+		System.out.println(bi.toString().length());
 	}
 
 }
