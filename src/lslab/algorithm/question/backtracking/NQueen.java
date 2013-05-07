@@ -16,7 +16,9 @@ public class NQueen {
 		int[] solves = new int[maxN];
 		nqueensimple(maxN, 0, solves);
 		System.out.println(solvecounts);
-		factorial(5000);
+		factorial(100);
+		permutation(new String("ABC").toCharArray(), 3);
+		combination(new String("abcd").toCharArray(), new char[2], 4, 2);
 
 	}
 
@@ -49,7 +51,7 @@ public class NQueen {
 			if (isSafe(maxN, curN, tmp, solves)) {
 				solves[curN] = tmp;
 				nqueen(maxN, curN + 1, solves);
-				solves[curN]=0;
+				solves[curN] = 0;
 			}
 
 		}
@@ -96,17 +98,51 @@ public class NQueen {
 		}
 		return true;
 	}
-	
-	public static void factorial(int n){
-		java.math.BigInteger  bi=new java.math.BigInteger("1");
-		
-		
-		for(int i=1;i<=n;++i){
-			bi=bi.multiply(new java.math.BigInteger(i+""));
+
+	public static void factorial(int n) {
+		java.math.BigInteger bi = new java.math.BigInteger("1");
+
+		for (int i = 1; i <= n; ++i) {
+			bi = bi.multiply(new java.math.BigInteger(i + ""));
 			System.out.println(i);
 		}
 		System.out.println(bi);
 		System.out.println(bi.toString().length());
+	}
+
+	public static void permutation(char[] str, int size) {
+		if (size == 1) {
+			System.out.println(str);
+			return;
+		}
+		for (int i = 0; i < size; ++i) {
+			char tmp = str[size - 1];
+			str[size - 1] = str[i];
+			str[i] = tmp;
+			permutation(str, size - 1);
+			tmp = str[size - 1];
+			str[size - 1] = str[i];
+			str[i] = tmp;
+		}
+
+	}
+
+	public static void combination(char[] str, char[] com, int size, int k) {
+		if (size == k) {
+			for (int i = 0; i < size; ++i) {
+				com[i] = str[i];
+			}
+			System.out.println(com);
+			return;
+		}
+		if (k == 0) {
+			System.out.println(com);
+			return;
+		}
+		com[k-1]=str[size-1];
+		combination(str, com, size - 1, k - 1);
+		combination(str, com, size - 1, k);
+
 	}
 
 }

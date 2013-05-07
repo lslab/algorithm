@@ -33,6 +33,8 @@ public class PalindromicPrime {
 			--ibegin;
 
 		}
+		
+		
 
 	}
 
@@ -49,7 +51,7 @@ public class PalindromicPrime {
 		return true;
 	}
 
-	public static boolean isPrime(int p) {
+	public static boolean isPrime(long p) {
 		if (p == 1)
 			return false;
 		if (p == 2)
