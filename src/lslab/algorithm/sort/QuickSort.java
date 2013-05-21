@@ -1,5 +1,7 @@
 package lslab.algorithm.sort;
 
+import java.util.Random;
+
 public class QuickSort<T extends Comparable<T>> extends AbstractSort<T>
 		implements Sortable<T> {
 
@@ -16,18 +18,37 @@ public class QuickSort<T extends Comparable<T>> extends AbstractSort<T>
 	}
 
 	private void quicksort(int[] a, int p, int q) {
-
-		int index = partition(a, p, q);
-		if (p < index - 1)
+		if (p < q) {
+			int index = partition_random(a, p, q);
 			quicksort(a, p, index - 1);
-		if (index + 1 < q)
 			quicksort(a, index + 1, q);
-		// quicksort(a, p, index);
-		// quicksort(a, index+1, q);
-		print(a);
+			print(a);
+		}
+		
 	}
 
-	// 此方法效率不高。但最好理解。
+	// 这种做法不容易出错。且容易理解
+	public static int partition(int[] a, int p, int q) {
+		int pivot = a[q];
+		int index = p;
+		for (int i = p; i < q; i++) {
+			if (a[i] <= pivot) {
+				swap(a, i, index);
+				index++;
+			}
+		}
+		swap(a, index, q);
+		return index;
+	}
+
+	public static int partition_random(int[] a, int p, int q) {
+		Random rnd = new Random();
+		int l = rnd.nextInt(q - p + 1);
+		swap(a, p+l, q);
+		return partition(a, p, q);
+	}
+
+	// 此方法效率不高。且容易出错。
 	private int partition1(int[] a, int p, int q) {
 		int pivot = a[p];
 		while (p < q) {
@@ -40,24 +61,6 @@ public class QuickSort<T extends Comparable<T>> extends AbstractSort<T>
 		}
 		// System.out.println(q);
 		return q;
-	}
-
-	// 这种做法挺好玩的，只是效率不好说，返回的中间值，不再参与排序。
-	public static int partition(int[] a, int p, int q) {
-		// print(p);
-		// print(q);
-		// print(a);
-		int pivot = a[q];
-		int index = p;
-		for (int i = p; i < q; i++) {
-			if (a[i] < pivot) {
-				swap(a, i, index);
-				index++;
-			}
-		}
-		swap(a, index, q);
-		// print("index:" + index);
-		return index;
 	}
 
 	// 此方法效率不高。但最好理解。

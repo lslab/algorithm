@@ -74,10 +74,10 @@ public class ZWWXInterview {
 	public static void divideOddandEven(int[] a) {
 		int i = 0;
 		int j = a.length - 1;
-		while (true) {
-			if (a[i] % 2 == 1)
+		while (i<=j) {
+			while (a[i] % 2 == 1)
 				i++;
-			if (a[j] % 2 == 0)
+			while(a[j] % 2 == 0)
 				j--;
 			if (i >= j)
 				break;
@@ -86,6 +86,8 @@ public class ZWWXInterview {
 				a[i] = a[j];
 				a[j] = tmp;
 			}
+			++i;
+			--j;
 
 		}
 		System.out.println(Arrays.toString(a));

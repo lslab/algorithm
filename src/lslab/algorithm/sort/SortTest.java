@@ -10,8 +10,8 @@ public class SortTest {
 		//Sortable<Integer> s = new SelectionSort<Integer>();
 		//Sortable<Integer> s = new InsertionSort<Integer>();
 		//Sortable<Integer> s = new MergeSort<Integer>();
-		//Sortable<Integer> s = new QuickSort<Integer>();
-		Sortable<Integer> s = new HeapSort<Integer>();
+		Sortable<Integer> s = new QuickSort<Integer>();
+		//Sortable<Integer> s = new HeapSort<Integer>();
 		s.setPrintFlag(true);
 		//Integer[] a = new Integer[10];
 		int[] a = new int[20];
